@@ -1,9 +1,14 @@
-console.log('ola mundo')
+var http = require('http');
+var handle = require('./handle');
 
-var a = 2;
+var name = require('./name');
 
-var b = 2;
 
-var c = a + b;
 
-console.log('c ->',c)
+var server = http.createServer(handle);
+
+console.log(name);
+server.listen(3000, function() {
+    console.log('Server is listening at port 3000');
+});
+
